@@ -1,10 +1,20 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'node:18.13.0'
+    }
+  }
   stages {
+    stage('Install dependencies') {
+      steps {
+        echo 'Installing dependencies...'
+        sh 'npm install'
+      }
+    }
     stage('Build') {
       steps {
         echo 'Building...'
-        // Add your build steps here
+        sh 'npm run build'
       }
     }
     stage('Test') {
@@ -17,6 +27,7 @@ pipeline {
       steps {
         echo 'Deploying...'
         // Add your deploy steps here
+        sh 'npm run deploy'
       }
     }
   }
