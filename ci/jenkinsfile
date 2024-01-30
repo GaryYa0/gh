@@ -14,7 +14,6 @@ pipeline {
       steps {
         echo 'Deploying...'
         // Add your deploy steps here
-        sh 'git branch -d gh-pages'
         sh 'npm run deploy'
       }
     }
