@@ -1,37 +1,37 @@
-name: Build and Deploy
+# name: Build and Deploy
 
-on:
-  push:
-    branches: ["main"]
+# on:
+#   push:
+#     branches: ["main"]
 
-permissions:
-  contents: write
+# permissions:
+#   contents: write
 
-jobs:
-  build-deploy:
-    runs-on: ubuntu-latest
+# jobs:
+#   build-deploy:
+#     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x]
+#     strategy:
+#       matrix:
+#         node-version: [18.x]
 
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: "npm"
-    - name: Install Packages
-      run: npm ci
-    - name: Build
-      run: npm run build
-    #- name: Test
-    #  run: npm test
-    - name: Set git user
-      run: |
-        git config --global user.email "ygy3389@gmail.com"
-        git config --global user.name "Gary Yao"
-    - name: Deploy🚀
-      run: npm run deploy
+#     steps:
+#     - name: Checkout
+#       uses: actions/checkout@v3
+#     - name: Use Node.js ${{ matrix.node-version }}
+#       uses: actions/setup-node@v3
+#       with:
+#         node-version: ${{ matrix.node-version }}
+#         cache: "npm"
+#     - name: Install Packages
+#       run: npm ci
+#     - name: Build
+#       run: npm run build
+#     #- name: Test
+#     #  run: npm test
+#     - name: Set git user
+#       run: |
+#         git config --global user.email "ygy3389@gmail.com"
+#         git config --global user.name "Gary Yao"
+#     - name: Deploy🚀
+#       run: npm run deploy
