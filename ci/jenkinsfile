@@ -13,6 +13,7 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'Deploying...'
+        sh 'git fetch'
         // Add your deploy steps here
         sh 'npm run deploy'
       }
