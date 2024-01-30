@@ -4,6 +4,12 @@ pipeline {
     nodejs 'Node_18'
   }
   stages {
+    stage('clear cache') {
+      steps {
+        echo 'clear cache...'
+        sh 'rm -rf ./node_modules'
+      }
+    }
     stage('Install dependencies') {
       steps {
         echo 'Installing dependencies...'
