@@ -26,6 +26,7 @@ pipeline {
       steps {
         echo 'Deploying...'
         // Add your deploy steps here
+        sh 'git pull --rebase origin gh-pages'
         sh 'npm run deploy'
       }
     }
