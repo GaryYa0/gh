@@ -1,20 +1,18 @@
-import logo from './logo.svg'
 import './App.css'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           <p>Hello World10</p>
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://github.com/GaryYa0/gh"
           target="_blank"
           rel="noopener noreferrer">
-          Learn React
+          Jenkins CI/CD Practice
         </a>
       </header>
     </div>

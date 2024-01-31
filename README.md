@@ -6,8 +6,10 @@
 2. `cat ~/.ssh/id_rsa.pub` to get public key
 3. add public key to github repo settings
    **github profile → settings → SSH and GPG keys → New SSH key**
-   ![1706668167257](image/README/1706668167257.png)
-   ![1706668046181](image/README/1706668046181.png)
+
+    ![1706673824442](image/README/1706673824442.png)
+
+    ![1706668046181](image/README/1706668046181.png)
 4. `cat ~/.ssh/id_rsa` to get private key
 5. add private key to Jenkins server
    **Jenkins → Dashboard → Manage Jenkins → Credentials → System → Global credentials → Add Credentials**
@@ -86,4 +88,5 @@ pipeline {
   project located at `~/workspace/{jenkins_job_name}`
 
   ![1706673541799](image/README/1706673541799.png)
+
   run `rm -rf node_modules` to clean the `node_modules` folder
